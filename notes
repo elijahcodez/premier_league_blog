@@ -1,0 +1,39 @@
+User can create, read, update and delete posts/discussions
+
+  Interface:
+  - Users can create discussion posts
+  - Users can read and reply to other discussion posts
+  - Users can edit their own posts
+  - Users can delete their own posts
+
+  User class
+      - attribrutes => username, password
+      - user signs up/logs in
+      - has many posts
+
+  User controller and views
+      - 'users/signup' =>
+      - 'users/signup' =>
+      - 'users/login' =>
+      - 'users/login' =>
+      - user can view posts '/users/:id/posts'
+
+  Post class
+      - attribrutes => name, body
+      - post belongs to User
+
+  User controller and views
+      - 'posts/new' => renders new post
+      - 'posts/' => submits order
+      - 'posts/' => renders all orders
+      - 'posts/:id' => renders one instance
+      - 'posts/:id/edit' => renders update form of an instance
+      - 'posts/:id' => updates instance
+      - 'posts/:id/delete' => deletes instance
+
+  Outline:
+
+  - Set up Classes
+  - Set up Database
+  - Users Controller
+  - Posts Controllers
