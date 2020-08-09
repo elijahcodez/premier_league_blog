@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
       redirect '/signup'
     else
       @user = User.create(params)
-      session[:user_id] = user.id
+      session[:user_id] = @user.id
       redirect '/posts'
     end
   end
