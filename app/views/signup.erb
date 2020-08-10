@@ -1,7 +1,35 @@
-<h3>Sign Up</h3>
+<h1 class="welcome_title"> Sign Up! </h1>
+<br>
+<img class="signup_img" src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80">
+<br>
+<div class="signup">
 <form action="/signup" method="POST">
 	<input type="text" name="username" placeholder="Username:">
 	<input type="text" name="email" placeholder="Email:">
 	<input type="password" name="password" placeholder="Password:">
 	<input type="submit" value="Sign Up">
 </form>
+</div>
+<style>
+
+		.welcome_title {
+				text-align: center;
+		}
+
+    .signup_img {
+        height: 25%;
+        width: 25%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-radius: 100%;
+    }
+
+    .signup {
+        text-align: center;
+        padding-bottom: 10%;
+    }
+
+</style>
