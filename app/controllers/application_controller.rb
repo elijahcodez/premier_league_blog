@@ -73,7 +73,7 @@ class ApplicationController < Sinatra::Base
 
   post "/posts" do
     redirect "/posts/new" if params[:content].empty?
-    @post = Post.create(content: params[:content], user_id: session[:user_id])
+    @post = Post.create(title: params[:title], content: params[:content], user_id: session[:user_id])
     redirect "/posts"
   end
 

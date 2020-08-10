@@ -1,4 +1,4 @@
 <h3>Welcome, <%= @user.username %></h3>
 <% Post.all.each do |t| %>
-<a href="/posts/<%= t.id %>"><%= t.content %></a><br><br>
+<a href="/posts/<%= t.id %>"><%= t.title %><%= t.content %></a><br><br>
 <% end %>
