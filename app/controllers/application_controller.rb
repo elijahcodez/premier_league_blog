@@ -60,11 +60,6 @@ class ApplicationController < Sinatra::Base
     redirect "/login"
   end
 
-  get "/users/:slug" do
-    @user = User.find_by_slug(params[:slug])
-    erb :'users/index'
-  end
-
   get "/posts/new" do
     redirect "/login" if !logged_in?
     @user = User.find(session[:user_id])
@@ -86,6 +81,7 @@ class ApplicationController < Sinatra::Base
   get "/posts/:id/edit" do
     redirect "/login" if !logged_in?
     @post = Post.find(params[:id])
+    redirect "/posts/#{params[:id]}" if current_user != @post.user
     erb :'posts/edit'
   end
 
