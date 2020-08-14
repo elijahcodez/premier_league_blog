@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
 		set :session_secret, "top_secret"
+    register Sinatra::Flash
   end
 
   get "/" do
@@ -23,6 +24,7 @@ class ApplicationController < Sinatra::Base
 
   post "/signup" do
     if params.values.any? { |x| x == "" }
+      flash[:alert] = "Please enter all required fields"
       redirect '/signup'
     else
       @user = User.create(params)
@@ -35,6 +37,7 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       redirect "/posts"
     else
+      flash[:alert] = "Invalid username or password"
       erb :login
     end
   end

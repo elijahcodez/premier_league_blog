@@ -3,6 +3,13 @@
 <img class="signup_img" src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80">
 <br>
 <div class="signup">
+
+	<div class="flash_alert">
+	        <% if flash[:alert] %>
+	        <%= flash[:alert] %>
+	        <% end %>
+	    </div>
+
 <form action="/signup" method="POST">
 	<input type="text" name="username" placeholder="Username:">
 	<input type="text" name="email" placeholder="Email:">
@@ -30,6 +37,11 @@
     .signup {
         text-align: center;
         padding-bottom: 10%;
+    }
+
+		.signup .flash_alert{
+        color: red;
+				text-align: center;
     }
 
 </style>

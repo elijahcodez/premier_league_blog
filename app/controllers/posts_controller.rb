@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   get "/posts/new" do
+    flash[:alert] = "Please Log In to Write a Post"
     redirect "/login" if !logged_in?
     @user = User.find(session[:user_id])
     erb :'posts/new'
